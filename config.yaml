@@ -1,0 +1,9 @@
+refgenome: 'refgenome/Gmax_275_v2.0.softmasked.20140305.fasta'
+datasets:
+    [
+    'SRR2073062',
+    'SRR2073061',
+    'SRR2073060',
+    'SRR2073059'
+    ]
+wdir: '/commons/student/2018-2019/Thema11/RickVenemaDataProcessing/' 
