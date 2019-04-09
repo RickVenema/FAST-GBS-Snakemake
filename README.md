@@ -2,7 +2,7 @@
 
 A snakemake implementation of the FAST-GBS pipeline
 
-##Introduction
+## Introduction
 
 Fast-GBS is originally a bash pipeline facilitating the processing of FASTQ sequence files obtained using a genotyping-by-sequencing method (GBS). 
 It includes a set of bash commands, python home-made scripts, and well-known bioinformatics software such as sabre, bwa, samtools, and platypus. 
