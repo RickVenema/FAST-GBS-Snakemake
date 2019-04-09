@@ -1,6 +1,6 @@
 # FAST-GBS Snakemake implementation
 
-A snakemake implementation of the FAST-GBS pipeline
+A snakemake implementation of the FAST-GBS pipeline.
 
 ## Introduction
 
@@ -28,19 +28,24 @@ For this pipeline, a couple of programs are required. The following programs are
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+First we will need the required programs that were specified in [Prerequisites](#Prerequisites). And now we will create a virtual environment for our program. This can be done with the following command
 
 ```
-Give the example
+virtualenv -p /usr/bin/python3 venv
 ```
 
-And repeat
+After creating the venv folder we activate the environment
 
 ```
-until finished
+source venv/bin/activate
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+This will activate the virtual environment. After activating the virtual environment, we start with installing snakemake. This is done with the following command:
+
+```
+pip3 install snakemake
+```
+Well the important steps are done, the pipeline can now be run. BUT WAIT, you will need the programs used in the pipeline as well. Lets do that as well. Follow the [Built With](#built-with) list to get the programs working. I will not copy the entire how to install pages of each program in this markdown. When in trouble, feel free to contact me, but it will probably be easy when using Linux (recommended).
 
 ## Built With
 
@@ -52,7 +57,7 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Authors
 * **Rick Venema** - *Snakemake Pipeline* - [RickVenema](https://github.com/RickVenema)
-* **Davoud Torkamaneh**, **Jérôme Laroche**, **Maxime Bastien**, **Amina Abed**, and **François Belzile** - Original pipeline
+* **Davoud Torkamaneh**, **Jérôme Laroche**, **Maxime Bastien**, **Amina Abed**, and **François Belzile** - *Original pipeline*
 
 ## License
 
