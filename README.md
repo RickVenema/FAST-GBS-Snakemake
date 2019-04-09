@@ -47,6 +47,14 @@ pip3 install snakemake
 ```
 Well the important steps are done, the pipeline can now be run. BUT WAIT, you will need the programs used in the pipeline as well. Lets do that as well. Follow the [Built With](#built-with) list to get the programs working. I will not copy the entire how to install pages of each program in this markdown. When in trouble, feel free to contact me, but it will probably be easy when using Linux (recommended).
 
+### How to run
+For setting some parameters open the [config.yaml](config.yaml) file and change the parameters to fit your likings. And to run this pipeline you will need to execute the following command:
+
+```
+snakemake
+```
+Thats it, no more than that.
+
 ## Built With
 
 * [Snakemake](https://snakemake.readthedocs.io/en/stable/) - Pipeline framework
