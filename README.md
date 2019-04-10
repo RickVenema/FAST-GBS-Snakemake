@@ -8,6 +8,8 @@ Fast-GBS is originally a bash pipeline facilitating the processing of FASTQ sequ
 It includes a set of bash commands, python home-made scripts, and well-known bioinformatics software such as sabre, bwa, samtools, and platypus. 
 Users simply fill out a parameter file and then launch the program. For each analysis, it requires the existence of a reference genome. 
 This may be a relatively complete genome made of pseudochromosomes or a more preliminary draft consisting of scaffolds and contigs.
+![](pipeline.png)
+
 
 ## Getting Started
 
