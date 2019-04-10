@@ -6,6 +6,8 @@ rule download:
         output_dir = config["wdir"] + "data/"
     output:
         config["wdir"]+"data/{sample}.fastq"
-    threads: 16
+    threads: int(config["threads"])
+    log: 
+        "logs/download.log"
     shell:
-        "parallel-fastq-dump -t {threads} -s {params.samples} -O {params.output_dir}"
+        "parallel-fastq-dump -t {threads} -s {params.samples} -O {params.output_dir} >2 {log}"

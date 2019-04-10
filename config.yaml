@@ -7,3 +7,4 @@ datasets:
     'SRR2073059'
     ]
 wdir: '/commons/student/2018-2019/Thema11/RickVenemaDataProcessing/' 
+threads: 8

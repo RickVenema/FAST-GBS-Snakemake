@@ -5,6 +5,9 @@ rule bcftools_call:
         bai=expand(config["wdir"]+"sorted_reads/{sample}.bam.bai", sample=config["datasets"])
     output:
         "calls/all.vcf"
+    threads: int(config["threads"])
+    log:
+        "logs/bcftools_call.log"
     shell:
         "samtools mpileup -g -f {input.fa} {input.bam} | "
-        "bcftools call --threads 20 -mv - > {output}"
+        "bcftools call --threads {threads} -mv - > {output} >2 {log}"

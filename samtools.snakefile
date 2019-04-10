@@ -3,9 +3,12 @@ rule samtools_sort:
     input:
        config["wdir"]+"mapped_reads/{sample}.bam"
     output:
-       config["wdir"]+"sorted_reads/{sample}.bam"
+        config["wdir"]+"sorted_reads/{sample}.bam"
+    threads: int(config["threads"])
+    log:
+        "logs/samtools_sort.log"
     shell:
-        "samtools sort -@ 8 -T {output} -O bam {input} > {output}"
+        "samtools sort -@ {threads} -T {output} -O bam {input} > {output} >2 {log}"
         
         
 rule samtools_index:
@@ -13,5 +16,7 @@ rule samtools_index:
         config["wdir"]+"sorted_reads/{sample}.bam"
     output:
         config["wdir"]+"sorted_reads/{sample}.bam.bai"
+    log:
+        "logs/samtools_index.log"
     shell:
-        "samtools index {input}"
+        "samtools index  {input} >2 {log}"

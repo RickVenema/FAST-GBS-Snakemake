@@ -11,3 +11,5 @@ include: "downloadgenomes.snakefile"
 rule all:
     input:
         "calls/all.vcf"
+    log:
+        "logs/all.log"
