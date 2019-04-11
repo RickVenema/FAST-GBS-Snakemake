@@ -1,0 +1,8 @@
+#configfile config.yaml
+genome: /homes/kfvenema/data/dataprocessing/WC03/genome.fa
+ext : .fa
+samples:
+    A : samples/A.bam
+    B : samples/B.bam
+    C : samples/C.bam
+    

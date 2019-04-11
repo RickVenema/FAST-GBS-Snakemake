@@ -6,9 +6,9 @@ rule samtools_sort:
         config["wdir"]+"sorted_reads/{sample}.bam"
     threads: int(config["threads"])
     log:
-        "logs/samtools_sort.log"
+        "logs/samtools_sort_{sample}.log"
     shell:
-        "samtools sort -@ {threads} -T {output} -O bam {input} > {output} >2 {log}"
+        "samtools sort -@ {threads} -T {output} -O bam {input} > {output} 2> {log}"
         
         
 rule samtools_index:
@@ -17,6 +17,6 @@ rule samtools_index:
     output:
         config["wdir"]+"sorted_reads/{sample}.bam.bai"
     log:
-        "logs/samtools_index.log"
+        "logs/samtools_index_{sample}.log"
     shell:
-        "samtools index  {input} >2 {log}"
+        "samtools index  {input} 2> {log}"

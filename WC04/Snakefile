@@ -1,0 +1,22 @@
+datadir = '/homes/kfvenema/Dataprocessing/WC04/data/'
+
+rule all:
+    input:
+        'result/heatmap.jpg'
+
+rule make_histogram:
+    input:
+        datadir + 'out.csv'
+    output:
+        'result/histogram.jpg'
+    shell:
+        "Rscript scripthist.R {input} {output}"
+
+
+rule make_heatmap:
+    input:
+        datadir + 'gene_ex.csv'
+    output:
+        'result/heatmap.jpg'
+    shell:
+        "Rscript scriptheat.R {input} {output}"

@@ -1,0 +1,27 @@
+from snakemake.remote.NCBI import RemoteProvider as NCBIRemoteProvider
+NCBI = NCBIRemoteProvider(email="f.feenstra@pl.hanze.nl") # email required by NCBI to prevent abuse
+
+# get accessions for the first 3 results in a search for full-length Zika virus genomes
+# the query parameter accepts standard GenBank search syntax
+query = 'SRP059747'
+accessions = NCBI.search(query, retmax=4)
+
+# give the accessions a file extension to help the RemoteProvider determine the
+# proper output type.
+input_files = expand("{acc}.fastq.gz", acc=accessions)
+
+rule all:
+    input:
+        "Zika.fasta"
+
+rule download_and_count:
+    input:
+        # Since *.fasta files could come from several different databases, specify the database here.
+        # if the input files are ambiguous, the provider will alert the user with possible options
+        # standard options like "seq_start" are supported
+        NCBI.remote(input_files, db="SRA", seq_start=5000)
+
+    output:
+        "Zika.fasta"
+    run:
+        shell("cat *.fasta > Zika.fasta")
